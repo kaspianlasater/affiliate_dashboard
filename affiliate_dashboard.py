@@ -89,6 +89,7 @@ def stats():
     table_html = df.tail(20).to_html(index=False)
     return f"<h1>Recent Clicks</h1>{table_html}<br><a href='/add'>Add Link</a> | <a href='/logout'>Logout</a>"
 
-if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 8080))
-    app.run(host="0.0.0.0", port=port, debug=True)
+import os
+port = int(os.environ.get("PORT", 8080))
+app.run(host="0.0.0.0", port=port)
+
